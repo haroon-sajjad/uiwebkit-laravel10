@@ -1,32 +1,54 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<!doctype html>
+<html>
 
-        <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" type="image/x-icon">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Pangolin&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,800&display=swap"
+        rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        body {
+            font-family: 'PT Serif', serif;
+        }
+    </style>
+</head>
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<body>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <section class="h-screen min-w-full grid lg:grid-cols-2 ">
+        <div class="h-full lg:block hidden">
+            <img src="{{ asset('/images/tree.png') }}" class="w-full h-screen object-cover" alt="">
+        </div>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+
+        <div class="p-8">
+            <div class="flex items-center md:justify-between justify-center">
+                <!-- Logo -->
+                <a href="#">
+                    <x-application-logo></x-application-logo>
                 </a>
+                <!-- Links -->
+                <div class="md:block hidden">
+                    <small class="font-inter">{{ __('Vous avez déjà un compte?') }}</small>
+                    <a href="#" class=" text-red-950 font-bold pl-2">{{ __('Connectez-vous') }}</a>
+                </div>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            {{-- Form Section --}}
+
+            <div class="sm:mt-40 mt-28 max-w-xl mx-auto  ">
                 {{ $slot }}
             </div>
+
+
+            <div class="  md:hidden mt-32 flex items-center justify-between sm:flex-row flex-col">
+                <small class="font-inter ">{{ __('Vous avez déjà un compte?') }}</small>
+                <a href="#" class="text-primaryColor font-bold pl-2">{{ __('Connectez-vous') }}</a>
+            </div>
         </div>
-    </body>
+    </section>
+</body>
+
 </html>
