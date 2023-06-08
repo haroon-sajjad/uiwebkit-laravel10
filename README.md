@@ -48,6 +48,22 @@ Run the composer install by following command and wait to compelete the setup
 > If composer is not installed on your computer, download it and and follow the instcutions from below URL:
 > [Composer](https://getcomposer.org/)
 
+### Generate Key
+
+Run below command to generate application key.
+
+`php artisan key:generate`
+
+### Populate Database
+
+Populate database with default tables and data by running below command
+
+`php artisan migerate`
+
+### Place Images
+
+This repository contains a `images.zip` file. Unzip it and place all images under `/storage/app/images` directory. Create images directory if not exists.
+
 ### Install Node packages
 
 Run the node.js installer to install the webpack dependencies. Wait till the process is compelete.
@@ -64,8 +80,6 @@ Run vite with npx to build the resources
 `npx vite build --watch`
 
 > Only use `--watch` switch if you want to continuesly watch the build on every code save.
-
-
 
 ### Laravel Storage Linking
 
