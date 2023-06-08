@@ -9,25 +9,18 @@
         </h1>
         {{-- Email Address --}}
         <div class="relative float-label-input">
-            <x-text-input id="email" type="email" name="email" :value="old('email')" required autofocus
-                autocomplete="off"
-                class="block font-inter sm:w-96 w-full bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-3 px-3 appearance-none leading-normal focus:border-primaryColor mt-1" />
-            <x-input-label for="email" :value="__('E-mail')"
-                class="absolute font-inter top-3 left-0 text-gray-400 pointer-events-none transition duration-200 ease-in-outbg-white px-2 text-grey-darker" />
+            <x-text-input-float-label id="email" type="email" name="email" :value="old('email')" required autofocus
+                autocomplete="off" />
+            <x-input-label-float for="email" :value="__('E-mail')" />
             <x-input-error :messages="$errors->get('email')" class="mt-2 font-inter pl-2 text-red-500 " />
         </div>
 
         {{-- Password --}}
 
         <div class="relative float-label-input mt-4">
-
-            <x-text-input id="password"
-                class="block font-inter sm:w-96 w-full bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-xl py-3 px-3 appearance-none leading-normal focus:border-primaryColor mt-1"
-                type="password" name="password" required autocomplete="current-password" />
-
-            <x-input-label for="password" :value="__('Mot de passe')"
-                class="absolute font-inter top-3 left-0 text-gray-400 pointer-events-none transition duration-200 ease-in-outbg-white px-2 text-grey-darker" />
-
+            <x-text-input-float-label id="password" type="password" name="password" required
+                autocomplete="current-password" />
+            <x-input-label-float for="password" :value="__('Mot de passe')" />
             <x-input-error :messages="$errors->get('password')" class="mt-2 font-inter pl-2 text-red-500" />
         </div>
 
@@ -40,18 +33,17 @@
             </label>
         </div>
 
-        <div class="flex items-center mt-1">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    href="{{ route('password.request') }}">
-                    {{ __('Mot de passe oublié?') }}
-                </a>
-            @endif
-        </div>
-        <div class="flex items-center mt-2">
-            <x-full-rounded-button>
+        <div class="flex items-center justify-end mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                href="{{ route('password.request') }}">
+                {{ __('Mot de passe oublié?') }}
+            </a>
+
+            <x-full-rounded-button class="ml-4">
                 {{ __('Connexion') }}
             </x-full-rounded-button>
         </div>
+
+
     </form>
 </x-guest-layout>

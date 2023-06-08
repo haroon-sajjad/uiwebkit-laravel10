@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+        {{ __('Mot de passe oublié? Aucun problème. Indiquez-nous simplement votre adresse e-mail et nous vous enverrons par e-mail un lien de réinitialisation de mot de passe qui vous permettra d\'en choisir un nouveau.') }}
     </div>
 
     <!-- Session Status -->
@@ -10,16 +10,17 @@
         @csrf
 
         <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+        <div class="relative float-label-input">
+            <x-text-input-float-label id="email" type="email" name="email" :value="old('email')" required autofocus />
+            <x-input-label-float for="email" :value="__('E-mail')" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
+            <x-full-rounded-button title="Lien de réinitialisation du mot de passe par e-mail">
+                {{-- {{ __('Email Password Reset Link') }} --}}
+                {{ __('Envoyer un lien') }}
+            </x-full-rounded-button>
         </div>
     </form>
 </x-guest-layout>

@@ -38,7 +38,7 @@
 
             {{-- Form Section --}}
 
-            <div class="sm:mt-40 mt-28 max-w-xl mx-auto  ">
+            <div class="sm:mt-40 mt-28 max-w-xs mx-auto  ">
                 {{ $slot }}
             </div>
 
