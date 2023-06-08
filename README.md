@@ -67,7 +67,7 @@ php artisan key:generate
 Populate database with default tables and data by running below command
 
 ```shell
-php artisan migerate
+php artisan migrate
 ```
 
 ### Place Images
