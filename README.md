@@ -14,13 +14,34 @@
 
 ### Download / Clone Git Repository
 
-: Download the git repository or clone it with below command
+Download the git repository or clone it with below command
 
 `git clone https://github.com/haroon-sajjad/uiwebkit-laravel10.git`
 
+and change directory 
+
+`cd uiwebkit-laravel10`
+
+### Change ENV Variable
+
+Before running `composer install`:
+
+1. Create MySql database `ui_webkit` or whatever name you decide.
+2. Rename `.env.example` to `.env`.
+3. Change databse conguration variables according to your
+
+```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=ui_webkit
+    DB_USERNAME=root
+    DB_PASSWORD=
+```
+
 ### Install Composer Packages
 
-: Run the composer install by following command and wait to compelete the setup
+Run the composer install by following command and wait to compelete the setup
 
 `composer install`
 
@@ -44,12 +65,14 @@ Run vite with npx to build the resources
 
 > Only use `--watch` switch if you want to continuesly watch the build on every code save.
 
+
+
 ### Laravel Storage Linking
 
 Link the storage directory with public directory so that asset() function work correctly. Use below command to build the link.
 
-`php artisan storage:link`
+`php artisan storage:link --force`
 
 ### Run the Server
 
-`php artisan serve`
+```php artisan serve```
