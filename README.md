@@ -16,11 +16,15 @@
 
 Download the git repository or clone it with below command
 
-`git clone https://github.com/haroon-sajjad/uiwebkit-laravel10.git`
+```shell
+git clone https://github.com/haroon-sajjad/uiwebkit-laravel10.git
+```
 
 and change directory 
 
-`cd uiwebkit-laravel10`
+```shell
+cd uiwebkit-laravel10
+```
 
 ### Change ENV Variable
 
@@ -30,7 +34,7 @@ Before running `composer install`:
 2. Rename `.env.example` to `.env`.
 3. Change databse conguration variables according to your
 
-```
+```Dotenv
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
@@ -43,22 +47,28 @@ Before running `composer install`:
 
 Run the composer install by following command and wait to compelete the setup
 
-`composer install`
+```shell
+composer install
+```
 
-> If composer is not installed on your computer, download it and and follow the instcutions from below URL:
+> If composer is not installed on your computer, download it and and follow the instcutions from this URL:
 > [Composer](https://getcomposer.org/)
 
 ### Generate Key
 
 Run below command to generate application key.
 
-`php artisan key:generate`
+```shell
+php artisan key:generate
+```
 
 ### Populate Database
 
 Populate database with default tables and data by running below command
 
-`php artisan migerate`
+```shell
+php artisan migerate
+```
 
 ### Place Images
 
@@ -68,16 +78,20 @@ This repository contains a `images.zip` file. Unzip it and place all images unde
 
 Run the node.js installer to install the webpack dependencies. Wait till the process is compelete.
 
-`npm install`
+```shell
+npm install
+```
 
-> If node.js is not installed on your computer, download it and and follow the instcutions from below URL:
+> If node.js is not installed on your computer, download it and and follow the instcutions from this URL:
 > [Node.js](https://nodejs.org/)
 
 ### Vite Resources Build
 
 Run vite with npx to build the resources
 
-`npx vite build --watch`
+```shell
+npx vite build --watch
+```
 
 > Only use `--watch` switch if you want to continuesly watch the build on every code save.
 
@@ -85,8 +99,12 @@ Run vite with npx to build the resources
 
 Link the storage directory with public directory so that asset() function work correctly. Use below command to build the link.
 
-`php artisan storage:link --force`
+```shell
+php artisan storage:link --force
+```
 
 ### Run the Server
 
-```php artisan serve```
+```shell
+php artisan serve
+```
