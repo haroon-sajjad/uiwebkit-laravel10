@@ -39,6 +39,7 @@ Run the node.js installer to install the webpack dependencies. Wait till the pro
 ### Vite Resources Build
 
 Run vite with npx to build the resources
+
 `npx vite build --watch`
 
 > Only use `--watch` switch if you want to continuesly watch the build on every code save.
