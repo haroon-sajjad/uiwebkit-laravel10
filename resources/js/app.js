@@ -1,13 +1,7 @@
 import "./bootstrap";
 
-import Alpine from "alpinejs";
-
-window.Alpine = Alpine;
-
-Alpine.start();
-
 // JavaScript to toggle mobile menu visibility
-const mobileMenuButtonOpen = document.getElementById("mobile-menu-button-open");
+/* const mobileMenuButtonOpen = document.getElementById("mobile-menu-button-open");
 const mobileMenuButtonClose = document.getElementById(
     "mobile-menu-button-close"
 );
@@ -24,3 +18,11 @@ mobileMenuButtonClose.addEventListener("click", () => {
     mobileMenuButtonOpen.classList.remove("hidden");
     mobileMenuButtonClose.classList.add("hidden");
 });
+ */
+
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
+
+Alpine.start();
+
